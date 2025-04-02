@@ -39,19 +39,19 @@ The RCC HPC cluster consists of three types of GPU nodes:
 
 ## Code Structure
 ├── mnist_scripts/
-│   ├── single_gpu.py         # Single GPU training script
-│   ├── multi_gpu.py          # Multi-GPU (single node) training script using DDP
-│   ├── multi_node.py         # Multi-node training script using DDP
-│   ├── slurm_single.sh       # SLURM script for single GPU training
-│   ├── slurm_multi_gpu.sh    # SLURM script for multi-GPU training
-│   ├── slurm_multi_node.sh   # SLURM script for multi-node training
+│   ├── singlegpu_MNIST.py         # Single GPU training script with MNIST dataset
+│   ├── multigpu_MNIST.py          # Multi-GPU (single node) training script using DDP with MNIST dataset
+│   ├── multinode_MNIST.py         # Multi-node training script using DDP with MNIST dataset
+│   ├── singlegpu_MNIST.slurm      # SLURM script for single GPU training with MNIST dataset
+│   ├── multigpu_MNIST.slurm       # SLURM script for multi-GPU training with MNIST dataset
+│   ├── multinode_MNIST.slurm      # SLURM script for multi-node training with MNIST dataset
 ├── big_mnist_scripts/
-│   ├── single_gpu.py         # Single GPU training script
-│   ├── multi_gpu.py          # Multi-GPU (single node) training script using DDP
-│   ├── multi_node.py         # Multi-node training script using DDP
-│   ├── slurm_single.sh       # SLURM script for single GPU training
-│   ├── slurm_multi_gpu.sh    # SLURM script for multi-GPU training
-│   ├── slurm_multi_node.sh   # SLURM script for multi-node training
+│   ├── singlegpu_bigMNIST.py         # Single GPU training script with custom-made bigMNIST dataset
+│   ├── multigpu_bigMNIST.py          # Multi-GPU (single node) training script using DDP with custom-made bigMNIST dataset
+│   ├── multinode_bigMNIST.py         # Multi-node training script using DDP with custom-made bigMNIST dataset
+│   ├── singlegpu_bigMNIST.slurm      # SLURM script for single GPU training with custom-made bigMNIST dataset
+│   ├── multigpu_bigMNIST.slurm       # SLURM script for multi-GPU training with custom-made bigMNIST dataset
+│   ├── multinode_bigMNIST.slurm      # SLURM script for multi-node training with custom-made bigMNIST dataset
 ├── README.md                 # This file
 ├── requirements.txt          # Python dependencies
 
@@ -60,7 +60,6 @@ The RCC HPC cluster consists of three types of GPU nodes:
 * Python 3.x
 * PyTorch
 * Torchvision
-* Other dependencies listed in `requirements.txt`
 
 To install requirements:
 
