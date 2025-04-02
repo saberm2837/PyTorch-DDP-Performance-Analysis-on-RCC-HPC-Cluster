@@ -56,6 +56,17 @@ The RCC HPC cluster consists of three types of GPU nodes:
 
 * README.md                    # This file
 * requirements.txt             # Python dependencies
+* results.md                   # Performance results
+
+## Performance Results
+
+The performance results for training on the MNIST and bigMNIST datasets are available in the results.md file.
+
+**Summary of Key Findings:**
+
+* Speedup is close to linear for multi-GPU training on a single node.
+* Multi-node training is slower due to communication overhead.
+* Performance varies significantly across different GPU nodes.
 
 ## Requirements
 
@@ -67,3 +78,4 @@ To install requirements:
 
 ```bash
 pip install -r requirements.txt
+
