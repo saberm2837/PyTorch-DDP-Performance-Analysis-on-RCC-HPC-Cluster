@@ -60,7 +60,7 @@ The RCC HPC cluster consists of three types of GPU nodes:
 
 ## Performance Results
 
-The performance results for training on the MNIST and bigMNIST datasets are available in the results.md file.
+The performance results for training on the MNIST and bigMNIST datasets are available in the **results.md**
 
 **Summary of Key Findings:**
 
