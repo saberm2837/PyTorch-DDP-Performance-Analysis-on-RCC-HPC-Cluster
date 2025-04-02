@@ -1,1 +1,68 @@
-# PyTorch-DDP-Performance-Analysis-on-RCC-HPC-Cluster
+# PyTorch DDP Performance Analysis on RCC HPC Cluster
+
+This repository contains PyTorch code and scripts used to analyze the runtime performance of Distributed Data Parallel (DDP) training across single GPU, multi-GPU (single node), and multi-node configurations on the RCC (Research Computing Center) HPC cluster. The primary goal is to understand the impact of GPU count and node distribution on training speed, particularly in environments with RoCEv2 interconnects and varying GPU hardware.
+
+## Project Overview
+
+The project focuses on benchmarking PyTorch DDP training using the MNIST dataset and a scaled-up version (bigMNIST) to stress GPU memory and communication. The experiments aim to:
+
+* Compare training times for single GPU, multi-GPU (single node), and multi-node setups.
+* Evaluate the impact of RoCEv2 interconnects on multi-node performance.
+* Analyze the effect of varying GPU hardware configurations on training speed.
+* Investigate the overhead of data loading and communication in distributed training.
+
+## Dataset
+
+* **MNIST:** The standard MNIST dataset (70,000 samples) is used for initial testing.
+* **bigMNIST:** A larger dataset created by augmenting and replicating the MNIST dataset.
+    * Augmentation: Random rotation, affine transformations, scaling, horizontal flips, and elastic deformations.
+    * Replication: 6 augmented versions, then 200 copies of the combined dataset, resulting in 72,000,000 samples (~52GB).
+
+## Hardware Configuration (RCC HPC Cluster)
+
+The RCC HPC cluster consists of three types of GPU nodes:
+
+1.  **Nodes gn01-06:**
+    * 48 cores
+    * 360GB RAM
+    * 4 x V100 GPUs (32GB GPU memory)
+2.  **Nodes gn07-08:**
+    * 48 cores
+    * 480GB RAM
+    * 4 x A40 GPUs (48GB GPU memory)
+3.  **Node gn09:**
+    * 40 cores
+    * 512GB RAM
+    * 4 x Tesla V100-SXM2 GPUs (32GB GPU memory)
+
+* **Interconnect:** RoCEv2 (100 Gbps, 5us latency). Note: No InfiniBand or NVLink.
+
+## Code Structure
+├── mnist_scripts/
+│   ├── single_gpu.py         # Single GPU training script
+│   ├── multi_gpu.py          # Multi-GPU (single node) training script using DDP
+│   ├── multi_node.py         # Multi-node training script using DDP
+│   ├── slurm_single.sh       # SLURM script for single GPU training
+│   ├── slurm_multi_gpu.sh    # SLURM script for multi-GPU training
+│   ├── slurm_multi_node.sh   # SLURM script for multi-node training
+├── big_mnist_scripts/
+│   ├── single_gpu.py         # Single GPU training script
+│   ├── multi_gpu.py          # Multi-GPU (single node) training script using DDP
+│   ├── multi_node.py         # Multi-node training script using DDP
+│   ├── slurm_single.sh       # SLURM script for single GPU training
+│   ├── slurm_multi_gpu.sh    # SLURM script for multi-GPU training
+│   ├── slurm_multi_node.sh   # SLURM script for multi-node training
+├── README.md                 # This file
+├── requirements.txt          # Python dependencies
+
+## Requirements
+
+* Python 3.x
+* PyTorch
+* Torchvision
+* Other dependencies listed in `requirements.txt`
+
+To install requirements:
+
+```bash
+pip install -r requirements.txt
