@@ -38,22 +38,22 @@ The RCC HPC cluster consists of three types of GPU nodes:
 * **Interconnect:** RoCEv2 (100 Gbps, 5us latency). Note: No InfiniBand or NVLink.
 
 ## Files
-singlegpu_MNIST.py            # Single GPU training script with MNIST dataset
-multigpu_MNIST.py             # Multi-GPU (single node) training script using DDP with MNIST dataset
-multinode_MNIST.py            # Multi-node training script using DDP with MNIST dataset
-singlegpu_MNIST.slurm         # SLURM script for single GPU training with MNIST dataset
-multigpu_MNIST.slurm          # SLURM script for multi-GPU training with MNIST dataset
-multinode_MNIST.slurm         # SLURM script for multi-node training with MNIST dataset
+    * singlegpu_MNIST.py            # Single GPU training script with MNIST dataset
+    * multigpu_MNIST.py             # Multi-GPU (single node) training script using DDP with MNIST dataset
+    * multinode_MNIST.py            # Multi-node training script using DDP with MNIST dataset
+    * singlegpu_MNIST.slurm         # SLURM script for single GPU training with MNIST dataset
+    * multigpu_MNIST.slurm          # SLURM script for multi-GPU training with MNIST dataset
+    * multinode_MNIST.slurm         # SLURM script for multi-node training with MNIST dataset
 
-singlegpu_bigMNIST.py         # Single GPU training script with custom-made bigMNIST dataset
-multigpu_bigMNIST.py          # Multi-GPU (single node) training script using DDP with custom-made bigMNIST dataset
-multinode_bigMNIST.py         # Multi-node training script using DDP with custom-made bigMNIST dataset
-singlegpu_bigMNIST.slurm      # SLURM script for single GPU training with custom-made bigMNIST dataset
-multigpu_bigMNIST.slurm       # SLURM script for multi-GPU training with custom-made bigMNIST dataset
-multinode_bigMNIST.slurm      # SLURM script for multi-node training with custom-made bigMNIST dataset
+    * singlegpu_bigMNIST.py         # Single GPU training script with custom-made bigMNIST dataset
+    * multigpu_bigMNIST.py          # Multi-GPU (single node) training script using DDP with custom-made bigMNIST dataset
+    * multinode_bigMNIST.py         # Multi-node training script using DDP with custom-made bigMNIST dataset
+    * singlegpu_bigMNIST.slurm      # SLURM script for single GPU training with custom-made bigMNIST dataset
+    * multigpu_bigMNIST.slurm       # SLURM script for multi-GPU training with custom-made bigMNIST dataset
+    * multinode_bigMNIST.slurm      # SLURM script for multi-node training with custom-made bigMNIST dataset
 
-README.md                    # This file
-requirements.txt             # Python dependencies
+    * README.md                    # This file
+    * requirements.txt             # Python dependencies
 
 ## Requirements
 
